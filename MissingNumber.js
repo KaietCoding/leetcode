@@ -1,8 +1,6 @@
 var missingNumber = function (nums) {
-  let set = new Set(nums);
-  let n = nums.length;
-
-  for (let i = 0; i <= n; i++) {
-    if (!set.has(i)) return i;
-  }
+  const n = nums.length;
+  let expectedSum = (n * (n + 1)) / 2; // Sum of numbers 0 to n
+  let actualSum = nums.reduce((sum, num) => sum + num, 0);
+  return expectedSum - actualSum;
 };
